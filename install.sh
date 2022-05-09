@@ -1,13 +1,14 @@
 #!/bin/bash
 
 echo "Installing Python3"
+sudo apt update
 sudo apt-get -y install python3-pip
 
 echo "Installing IntegraPy"
-pip3 install IntegraPy
+sudo pip3 install IntegraPy
 
 echo "Installing Wget"
-apt install wget
+sudo apt install wget
 
 echo "Downloading & copy files"
 wget https://raw.githubusercontent.com/leenperjasknegt/camect-satel/main/camect.service
