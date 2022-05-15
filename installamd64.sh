@@ -24,6 +24,8 @@ sudo mv demo.py /home/administrator/.local/lib/python3.8/site-packages/IntegraPy
 sudo mv camect.service /etc/systemd/system/camect.service
 echo
 echo ------------------------------------
+ehco
+
 echo "IP adress Satel Integra ETHM:"
 read varintegraip
 if [ -z "$varintegraip" ]
@@ -32,9 +34,11 @@ then
 else
 sed -i "9c\ExecStart=/usr/bin/python3 -m IntegraPy.demo $varintegraip" /etc/systemd/system/camect.service
 fi
+
 echo
 echo ---------------------------------
 echo
+
 echo "IP adress Satel Integra ETHM:"
 read varintegraip
 echo "Wachtwoord Camect (prefix emailadres):"
@@ -46,8 +50,10 @@ else
 sed -i "39c\           r = requests.post('https://'$varcamectip'/api/EnableAlert', data={'Enable': '0'}, verify=False, auth=('admin', '$varcamectpassword'))" /home/administrator/.local/lib/python3.8/site-packages/IntegraPy/demo.py
 sed -i "42c\           r = requests.post('https://'$varcamectip'/api/EnableAlert', verify=False, auth=('admin', '$varcamectpassword'))" /home/administrator/.local/lib/python3.8/site-packages/IntegraPy/demo.py
 fi
+
 echo 
 echo ------------------------------------
+echo
 echo "Creating Camect Service"
 echo
 sudo systemctl daemon-reload
