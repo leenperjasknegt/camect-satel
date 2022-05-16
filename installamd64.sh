@@ -38,7 +38,8 @@ fi
 echo
 echo ---------------------------------
 echo
-
+echo "Camect IP:"
+read varcamectip
 echo "Wachtwoord Camect (prefix emailadres):"
 read varcamectpassword
 if [ -z "$varcamectip" ] && [ -z "$varcamectpassword" ]
