@@ -36,12 +36,10 @@ armed_partitions = ', '.join(
 def checkArmStatus():
     if "Camera's" in armed_partitions:
            print ("Armed")
-           r = requests.get('http://localhost:9000/arm')
-           r = requests.post('https://192.168.0.150/api/EnableAlert', data={'Enable': '0'}, verify=False, auth=('admin', 'service'))
+           r = requests.post('https://camect.local/api/EnableAlert', data={'Enable': '0'}, verify=False, auth=('admin', 'service'))
     else:
            print ("Disarmed")
-           r = requests.get('http://localhost:9000/disarm')
-           r = requests.post('https://192.168.0.150/api/EnableAlert', verify=False, auth=('admin', 'service'))
+           r = requests.post('https://camect.local/api/EnableAlert', verify=False, auth=('admin', 'service'))
 
 while(True):
     armed_partitions = ', '.join(
