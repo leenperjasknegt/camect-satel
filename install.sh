@@ -6,7 +6,7 @@
 ###################################################################
 
 
-echo "Did you accept the terms at https://camect.local and enabled Integration in Satel ETHM settings?"
+echo "Did you accept the terms at \e[1;31mhttps://local.home.camect.com\e[0m and enabled Integration in Satel ETHM settings?"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) break;;
@@ -43,7 +43,7 @@ sudo mv demo.py /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
 sudo mv camect.service /etc/systemd/system/camect.service
 echo
 echo "###################################################################"
-echo "IP adress Satel Integra ETHM:"
+echo "Satlel Integra LAN IP:"
 read varintegraip
 if [ -z "$varintegraip" ]
 then
@@ -53,7 +53,7 @@ sed -i "9c\ExecStart=/usr/bin/python3 -m IntegraPy.demo $varintegraip" /etc/syst
 fi
 echo
 echo "###################################################################"
-echo "Camect IP:"
+echo "Camect URL: (visit \e[1;31mhttps://local.home.camect.com\e[0m and paste the link in here; example: https://ebbabdd9a.l.home.camect.com/"
 read varcamectip
 echo "Wachtwoord Camect (prefix emailadres):"
 read varcamectpassword
