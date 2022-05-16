@@ -20,7 +20,7 @@ echo
 echo "Downloading & copy files"
 wget https://raw.githubusercontent.com/leenperjasknegt/camect-satel/main/camect.service
 wget https://raw.githubusercontent.com/leenperjasknegt/camect-satel/main/demo.py
-sudo mv demo.py /home/administrator/.local/lib/python3.8/site-packages/IntegraPy/demo.py
+sudo mv demo.py /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
 sudo mv camect.service /etc/systemd/system/camect.service
 echo
 echo ------------------------------------
@@ -46,8 +46,8 @@ if [ -z "$varcamectip" ] && [ -z "$varcamectpassword" ]
 then
       echo "Nothing changed"
 else
-sed -i "39c\           r = requests.post('https://'$varcamectip'/api/EnableAlert', data={'Enable': '0'}, verify=False, auth=('admin', '$varcamectpassword'))" /home/administrator/.local/lib/python3.8/site-packages/IntegraPy/demo.py
-sed -i "42c\           r = requests.post('https://'$varcamectip'/api/EnableAlert', verify=False, auth=('admin', '$varcamectpassword'))" /home/administrator/.local/lib/python3.8/site-packages/IntegraPy/demo.py
+sed -i "39c\           r = requests.post('https://'$varcamectip'/api/EnableAlert', data={'Enable': '0'}, verify=False, auth=('admin', '$varcamectpassword'))" /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
+sed -i "42c\           r = requests.post('https://'$varcamectip'/api/EnableAlert', verify=False, auth=('admin', '$varcamectpassword'))" /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
 fi
 
 echo 
