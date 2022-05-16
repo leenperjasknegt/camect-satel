@@ -4,7 +4,7 @@
 # API for connecting Camect with Satel Integra ETHM module.       #                                                                                                                                                                                     
 # Author: JL                                                      #                            
 ###################################################################
-#exec >log.txt 2>&1
+
 
 echo "Did you accept the terms at https://camect.local and enabled Integration in Satel ETHM settings?"
 select yn in "Yes" "No"; do
