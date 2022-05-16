@@ -1,5 +1,5 @@
 [Unit]
-Description= ETHM
+Description= Camect
 After=multi-user.target
 StartLimitIntervalSec=0
 [Service]
