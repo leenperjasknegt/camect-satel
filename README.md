@@ -1,5 +1,6 @@
+Install Linux Server:
+
 ```
-git status
-git add
-git commit
+bash <(curl -s0 https://raw.githubusercontent.com/leenperjasknegt/camect-satel/main/install.sh)
 ```
+
