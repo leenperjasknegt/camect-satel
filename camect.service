@@ -6,7 +6,7 @@ StartLimitIntervalSec=0
 User=administrator
 Type=simple
 Restart=always
-ExecStart=/usr/bin/python3 -m IntegraPy.demo 192.168.1.7
+ExecStart=/usr/bin/python3 -m IntegraPy.demo 192.168.0.40
 RestartSec=5
 [Install]
 WantedBy=multi-user.target
