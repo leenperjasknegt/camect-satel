@@ -17,29 +17,29 @@ echo "###################################################################"
 echo "Installing Python3"
 echo "###################################################################"
 echo
-sudo apt update
-sudo apt-get -y install python3-pip
+sudo apt update > /dev/null 2>&1
+sudo apt-get -y install python3-pip > /dev/null 2>&1
 echo
 echo "###################################################################"
 echo "Installing IntegraPy"
 echo "###################################################################"
 echo
-sudo pip3 install IntegraPy
+sudo pip3 install IntegraPy > /dev/null 2>&1
 echo
 echo "###################################################################"
 echo "Installing Wget"
 echo "###################################################################"
 echo
-sudo apt install wget
+sudo apt install wget > /dev/null 2>&1
 echo
 echo "###################################################################"
 echo "Downloading & copy files"
 echo "###################################################################"
 echo
-wget https://raw.githubusercontent.com/leenperjasknegt/camect-satel/main/camect.service
-wget https://raw.githubusercontent.com/leenperjasknegt/camect-satel/main/demo.py
-sudo mv demo.py /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
-sudo mv camect.service /etc/systemd/system/camect.service
+wget https://raw.githubusercontent.com/leenperjasknegt/camect-satel/main/camect.service > /dev/null 2>&1
+wget https://raw.githubusercontent.com/leenperjasknegt/camect-satel/main/demo.py > /dev/null 2>&1
+sudo mv demo.py /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py > /dev/null 2>&1
+sudo mv camect.service /etc/systemd/system/camect.service > /dev/null 2>&1
 echo
 echo "###################################################################"
 echo "IP adress Satel Integra ETHM:"
@@ -68,18 +68,18 @@ echo "###################################################################"
 echo "Creating Camect Service"
 echo "###################################################################"
 echo
-sudo systemctl stop camect.service
+sudo systemctl stop camect.service > /dev/null 2>&1
 sleep 2
-sudo systemctl daemon-reload
+sudo systemctl daemon-reload > /dev/null 2>&1
 sleep 1
-sudo systemctl enable camect.service
+sudo systemctl enable camect.service > /dev/null 2>&1
 echo
 echo "###################################################################"
 echo "Start Camect Service"
 echo "###################################################################"
 echo
 sleep 1
-sudo systemctl start camect.service
+sudo systemctl start camect.service > /dev/null 2>&1
 echo
 sleep 2
 echo
