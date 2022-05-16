@@ -60,14 +60,16 @@ if [ -z "$varcamectip" ] && [ -z "$varcamectpassword" ]
 then
       echo "Nothing changed"
 else
-sudo sed -i "39c\           r = requests.post('https://'$varcamectip'/api/EnableAlert', data={'Enable': '0'}, verify=False, auth=('admin', '$varcamectpassword'))" /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
-sudo sed -i "42c\           r = requests.post('https://'$varcamectip'/api/EnableAlert', verify=False, auth=('admin', '$varcamectpassword'))" /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
+sudo sed -i "39c\           r = requests.post('https://$varcamectip/api/EnableAlert', data={'Enable': '0'}, verify=False, auth=('admin', '$varcamectpassword'))" /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
+sudo sed -i "42c\           r = requests.post('https://$varcamectip/api/EnableAlert', verify=False, auth=('admin', '$varcamectpassword'))" /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
 fi
 echo
 echo "###################################################################"
 echo "Creating Camect Service"
 echo "###################################################################"
 echo
+sudo systemctl stop camect.service
+sleep 2
 sudo systemctl daemon-reload
 sleep 1
 sudo systemctl enable camect.service
@@ -79,8 +81,9 @@ echo
 sleep 1
 sudo systemctl start camect.service
 echo
+sleep 2
 echo
-echo
+sudo systemctl status camect.service
 echo "###################################################################"
 echo "INSTALLATION SUCCESFULL!"
 echo "###################################################################"
