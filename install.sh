@@ -1,9 +1,11 @@
 #!/bin/bash
-echo "Integration Option needs to be enabled in ETHM setting"
-echo
-echo "Port needs to be on default 7094"
-echo
-echo "Accept terms on Camect device by surfing to https://camectip"
+echo "Did you accept the terms at https://camect.local and enabled Integration in Satel ETHM settings?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) break;;
+        No ) exit;;
+    esac
+done
 echo
 echo "Installing Python3"
 echo
