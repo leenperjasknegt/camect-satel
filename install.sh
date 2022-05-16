@@ -53,7 +53,8 @@ sed -i "9c\ExecStart=/usr/bin/python3 -m IntegraPy.demo $varintegraip" /etc/syst
 fi
 echo
 echo "###################################################################"
-echo "Camect URL: (visit https://local.home.camect.com and paste the link in here; for example: https://ebbabdd9a.l.home.camect.com/)"
+echo "Camect URL: (visit https://local.home.camect.com and paste the link in here; for example: ebbabdd9a.l.home.camect.com/)"
+echo "WARNING: WITHOUT HTTPS:// !!"
 read varcamectip
 echo "Wachtwoord Camect (prefix emailadres):"
 read varcamectpassword
