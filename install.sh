@@ -6,7 +6,7 @@
 ###################################################################
 
 
-echo "Did you accept the terms at \e[1;31mhttps://local.home.camect.com\e[0m and enabled Integration in Satel ETHM settings?"
+echo "Did you accept the terms at \e[1;31mhttps://local.home.camect.com \e[0m and enabled Integration in Satel ETHM settings?"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) break;;
