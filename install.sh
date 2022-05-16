@@ -6,7 +6,8 @@
 ###################################################################
 
 
-echo "Did you accept the terms at https://local.home.camect.com and enabled Integration in Satel ETHM settings?"
+echo "Did you accept the terms at https://local.home.camect.com?"
+echo "Did you enabled Integration in Satel ETHM settings and changed it to a static IP?"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) break;;
@@ -43,7 +44,7 @@ sudo mv demo.py /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
 sudo mv camect.service /etc/systemd/system/camect.service
 echo
 echo "###################################################################"
-echo "Satlel Integra LAN IP:"
+echo "Satel Integra LAN IP:"
 read varintegraip
 if [ -z "$varintegraip" ]
 then
