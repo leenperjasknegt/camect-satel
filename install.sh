@@ -6,7 +6,7 @@
 ###################################################################
 
 
-echo "Did you accept the terms at \e[1;31mhttps://local.home.camect.com \e[0m and enabled Integration in Satel ETHM settings?"
+echo "Did you accept the terms at https://local.home.camect.com and enabled Integration in Satel ETHM settings?"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) break;;
@@ -53,7 +53,7 @@ sed -i "9c\ExecStart=/usr/bin/python3 -m IntegraPy.demo $varintegraip" /etc/syst
 fi
 echo
 echo "###################################################################"
-echo "Camect URL: (visit \e[1;31mhttps://local.home.camect.com\e[0m and paste the link in here; example: https://ebbabdd9a.l.home.camect.com/"
+echo "Camect URL: (visit https://local.home.camect.com and paste the link in here; example: https://ebbabdd9a.l.home.camect.com/"
 read varcamectip
 echo "Wachtwoord Camect (prefix emailadres):"
 read varcamectpassword
