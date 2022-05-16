@@ -56,19 +56,14 @@ echo
 echo "Creating Camect Service"
 echo
 sudo systemctl daemon-reload
+sleep 1
 sudo systemctl enable camect.service
 echo
 echo "Start Camect Service"
 echo
+sleep 1
 sudo systemctl start camect.service
 echo
 echo ------------------------------------
 echo
-echo "Change IP to Satel ETHM IP in following file: /etc/systemd/system/camect.service"
-echo
-echo "Change IP to Camect device IP in following file: /home/administrator/.local/lib/python3.8/site-packages/IntegraPy/demo.py"
-echo
-echo "Start the Camect service by sudo systemctl start camect.service"
-echo
-echo
-echo
+
