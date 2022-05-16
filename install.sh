@@ -46,8 +46,8 @@ if [ -z "$varcamectip" ] && [ -z "$varcamectpassword" ]
 then
       echo "Nothing changed"
 else
-sed -i "39c\           r = requests.post('https://'$varcamectip'/api/EnableAlert', data={'Enable': '0'}, verify=False, auth=('admin', '$varcamectpassword'))" /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
-sed -i "42c\           r = requests.post('https://'$varcamectip'/api/EnableAlert', verify=False, auth=('admin', '$varcamectpassword'))" /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
+sudo sed -i "39c\           r = requests.post('https://'$varcamectip'/api/EnableAlert', data={'Enable': '0'}, verify=False, auth=('admin', '$varcamectpassword'))" /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
+sudo sed -i "42c\           r = requests.post('https://'$varcamectip'/api/EnableAlert', verify=False, auth=('admin', '$varcamectpassword'))" /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
 fi
 
 echo 
