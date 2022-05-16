@@ -24,7 +24,7 @@ sudo mv demo.py /home/administrator/.local/lib/python3.8/site-packages/IntegraPy
 sudo mv camect.service /etc/systemd/system/camect.service
 echo
 echo ------------------------------------
-ehco
+echo
 
 echo "IP adress Satel Integra ETHM:"
 read varintegraip
@@ -39,8 +39,6 @@ echo
 echo ---------------------------------
 echo
 
-echo "IP adress Satel Integra ETHM:"
-read varintegraip
 echo "Wachtwoord Camect (prefix emailadres):"
 read varcamectpassword
 if [ -z "$varcamectip" ] && [ -z "$varcamectpassword" ]
