@@ -13,7 +13,7 @@ camecturl = ''
 camectpassword = ''
 integrazone = ''
 integrapartition = ""
-zoneinverse = ''
+
 
 template = '''\
 Model:            {0[model]}
