@@ -10,7 +10,7 @@ from .constants import PARTITION, ZONE, OUTPUT
 from . import Integra
 
 camecturl = "camect.local"
-camectprefix = "service"
+camectpassword = "service"
 integrazone = "Poort"
 integrapartition = "Camera's"
 
@@ -41,10 +41,10 @@ armed_partitions = ', '.join(
 def checkArmStatus():
     if integrapartition in armed_partitions and integrazone in violated_zones :
            print ("Armed")
-           r = requests.post('camecturl', data={'Enable': '0'}, verify=False, auth=('admin', 'camectprefix'))
+           r = requests.post('camecturl', data={'Enable': '0'}, verify=False, auth=('admin', 'camectpassword'))
     else:
            print ("Disarmed")
-           r = requests.post('camecturl', verify=False, auth=('admin', 'camectprefix'))
+           r = requests.post('camecturl', verify=False, auth=('admin', 'camectpassword'))
 
 
 while(True):
