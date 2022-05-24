@@ -69,7 +69,7 @@ then
       echo "Nothing changed"
 else
 sudo sed -i "12c\camecturl = '$varcamecturl'" /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
-sudo sed -i "12c\camectpassword = '$varcamectpassword'" /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
+sudo sed -i "13c\camectpassword = '$varcamectpassword'" /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
 fi
 echo
 echo "###################################################################"
