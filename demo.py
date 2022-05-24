@@ -40,7 +40,7 @@ armed_partitions = ', '.join(
 )
 
 def checkArmStatus():
-    if integrapartition in armed_partitions and integrazone in violated_zones :
+    if integrapartition in armed_partitions and zoneinverse integrazone in violated_zones :
            print ("Armed")
            r = requests.post('camecturl', data={'Enable': '0'}, verify=False, auth=('admin', 'camectpassword'))
     else:
