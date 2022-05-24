@@ -9,7 +9,10 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 from .constants import PARTITION, ZONE, OUTPUT
 from . import Integra
 
-
+camecturl = "camect.local"
+camectprefix = "service"
+integrazone = "Poort"
+integrapartition = "Camera's"
 
 template = '''\
 Model:            {0[model]}
@@ -36,12 +39,12 @@ armed_partitions = ', '.join(
 )
 
 def checkArmStatus():
-    if "Camera's" in armed_partitions and "" in violated_zones :
+    if integrapartition in armed_partitions and integrazone in violated_zones :
            print ("Armed")
-           r = requests.post('https://fbb8bdd9a.l.home.camect.com/api/EnableAlert', data={'Enable': '0'}, verify=False, auth=('admin', 'leenknegtjasper'))
+           r = requests.post('camecturl', data={'Enable': '0'}, verify=False, auth=('admin', 'camectprefix'))
     else:
            print ("Disarmed")
-           r = requests.post('https://fbb8bdd9a.l.home.camect.com/api/EnableAlert', verify=False, auth=('admin', 'leenknegtjasper'))
+           r = requests.post('camecturl', verify=False, auth=('admin', 'camectprefix'))
 
 
 while(True):
