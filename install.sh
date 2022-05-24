@@ -79,7 +79,7 @@ if [ -z "$varintegrapartition" ]
 then
       echo "Nothing changed"
 else
-sudo sed -i '15c\integrapartition = "$varintegrapartition"' /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
+sudo sed -i "15c\integrapartition = '$varintegrapartition'" /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
 fi
 echo
 echo "###################################################################"
@@ -91,7 +91,7 @@ if [ -z "$varintegrazone" ]
 then
       echo "Nothing changed"
 else
-sudo sed -i '14c\integrazone = "$varintegrazone"' /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
+sudo sed -i "14c\integrazone = '$varintegrazone'" /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
 fi
 
 
