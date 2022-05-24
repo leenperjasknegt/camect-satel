@@ -99,7 +99,7 @@ echo
 echo "###################################################################"
 read -p "Do you want to inverse the zone? From NC to NO? (y/n)" CONT
 if [ "$CONT" = "y" ]; then
-  sudo sed -i "16c\zoneinverse = 'not'" /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
+  sudo sed -i "43c\     if integrapartition in armed_partitions and not integrazone in violated_zones :" /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
 else
   echo "booo";
 fi
