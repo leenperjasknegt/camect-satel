@@ -57,20 +57,53 @@ echo "###################################################################"
 echo "Visit https://local.home.camect.com and paste the link in here; for example: ebbabdd9a.l.home.camect.com"
 echo "## WARNING: WITHOUT HTTPS:// !! ##"
 echo "Camect URL:"
-read varcamectip
+read varcamecturl
 echo
 echo "###################################################################"
 echo
 echo "Wachtwoord Camect (prefix emailadres):"
 echo "For example: camect@gmail.com => prefix: camect"
 read varcamectpassword
-if [ -z "$varcamectip" ] && [ -z "$varcamectpassword" ]
+if [ -z "$varcamecturl" ] && [ -z "$varcamectpassword" ]
 then
       echo "Nothing changed"
 else
-sudo sed -i "39c\           r = requests.post('https://$varcamectip/api/EnableAlert', data={'Enable': '0'}, verify=False, auth=('admin', '$varcamectpassword'))" /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
-sudo sed -i "42c\           r = requests.post('https://$varcamectip/api/EnableAlert', verify=False, auth=('admin', '$varcamectpassword'))" /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
+sudo sed -i "12c\camecturl = '$varcamecturl'" /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
+sudo sed -i "12c\camectpassword = '$varcamectpassword'" /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
 fi
+echo
+echo "###################################################################"
+echo "Satel Intergra Partition name:"
+read varintegrapartition
+if [ -z "$varintegrapartition" ]
+then
+      echo "Nothing changed"
+else
+sudo sed -i '15c\integrapartition = "$varintegrapartition"' /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
+fi
+echo
+echo "###################################################################"
+echo "Satel Intergra (extra) Zone name:"
+echo "You can use an extra zone that needs to be closed at the same time the partition is armed to enable the Camect alerts"
+echo "** If you don't please leave the field empty ***"
+read varintegrazone
+if [ -z "$varintegrazone" ]
+then
+      echo "Nothing changed"
+else
+sudo sed -i '14c\integrazone = "$varintegrazone"' /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
+fi
+
+
+echo
+echo "###################################################################"
+read -p "Do you want to inverse the zone? From NC to NO? (y/n)" CONT
+if [ "$CONT" = "y" ]; then
+  sudo sed -i "16c\zoneinverse = 'not'" /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
+else
+  echo "booo";
+fi
+
 echo
 echo "###################################################################"
 echo "Creating Camect Service"
