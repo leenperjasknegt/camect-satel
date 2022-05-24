@@ -9,9 +9,9 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 from .constants import PARTITION, ZONE, OUTPUT
 from . import Integra
 
-camecturl = "camect.local"
-camectpassword = "service"
-integrazone = "Poort"
+camecturl = 'camect.local'
+camectpassword = 'service'
+integrazone = 'Poort'
 integrapartition = "Camera's"
 
 template = '''\
