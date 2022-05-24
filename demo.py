@@ -3,6 +3,8 @@ from __future__ import unicode_literals, print_function
 import sys
 import requests
 import time
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 from .constants import PARTITION, ZONE, OUTPUT
 from . import Integra
@@ -34,12 +36,13 @@ armed_partitions = ', '.join(
 )
 
 def checkArmStatus():
-    if "Camera's" in armed_partitions:
+    if "Camera's" in armed_partitions and "" in violated_zones :
            print ("Armed")
-           r = requests.post('https://camect.local/api/EnableAlert', data={'Enable': '0'}, verify=False, auth=('admin', 'service'))
+           r = requests.post('https://fbb8bdd9a.l.home.camect.com/api/EnableAlert', data={'Enable': '0'}, verify=False, auth=('admin', 'leenknegtjasper'))
     else:
            print ("Disarmed")
-           r = requests.post('https://camect.local/api/EnableAlert', verify=False, auth=('admin', 'service'))
+           r = requests.post('https://fbb8bdd9a.l.home.camect.com/api/EnableAlert', verify=False, auth=('admin', 'leenknegtjasper'))
+
 
 while(True):
     armed_partitions = ', '.join(
@@ -47,6 +50,10 @@ while(True):
         for part in integra.get_armed_partitions()
 )
 
+    violated_zones = ', '.join(
+        integra.get_name(ZONE, zone).name
+        for zone in integra.get_violated_zones()
+)
 
     checkArmStatus()
     time.sleep(3)
