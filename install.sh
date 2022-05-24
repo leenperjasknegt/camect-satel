@@ -74,6 +74,7 @@ fi
 echo
 echo "###################################################################"
 echo "Satel Intergra Partition name:"
+echo "*** Don't use <'> !!! ***"
 read varintegrapartition
 if [ -z "$varintegrapartition" ]
 then
