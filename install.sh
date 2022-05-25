@@ -24,17 +24,17 @@ then
   echo "Installing Python3"
   echo "###################################################################"
   echo
-  suo apt-get -y install python3-pip;
+  sudo apt-get -y install python3-pip;
 fi
 echo
 if [ $(dpkg-query -W -f='${Status}' wget 2>/dev/null | grep -c "ok installed") -eq 0 ];
 then
   echo
   echo "###################################################################"
-  echo "Installing Python3"
+  echo "Installing Wget"
   echo "###################################################################"
   echo
-  suo apt install wget;
+  sudo apt install wget;
 fi
 echo
 echo
