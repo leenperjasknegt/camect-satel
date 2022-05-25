@@ -15,7 +15,6 @@ integrazone = ''
 integrapartition = ""
 camecturlfull = camecturl + '/api/EnableAlert'
 
-
 template = '''\
 Model:            {0[model]}
 Version:          {0[version]}
