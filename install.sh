@@ -54,8 +54,8 @@ sed -i "9c\ExecStart=/usr/bin/python3 -m IntegraPy.demo $varintegraip" /etc/syst
 fi
 echo
 echo "###################################################################"
-echo "Visit https://local.home.camect.com and paste the link in here; for example: ebbabdd9a.l.home.camect.com"
-echo "## WARNING: WITHOUT HTTPS:// !! ##"
+echo "Visit https://local.home.camect.com and paste the link in here; for example: https://ebbabdd9a.l.home.camect.com"
+echo "## WARNING:  WITH HTTPS:// !! ##"
 echo "Camect URL:"
 read varcamecturl
 echo
