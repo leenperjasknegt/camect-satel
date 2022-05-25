@@ -101,11 +101,11 @@ echo "###################################################################"
 read -p "Do you want to inverse the zone? From NC to NO? (y/n)" CONT
 if [ "$CONT" = "y" ]; then
   echo
-  echo "Normal CLosed"
+  echo "Normally Closed"
   sudo sed -i "43c\     if integrapartition in armed_partitions and not integrazone in violated_zones :" /usr/local/lib/python3.8/dist-packages/IntegraPy/demo.py
 else
   echo
-  echo "Normal Open";
+  echo "Normally Open";
 fi
 
 echo
