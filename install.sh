@@ -15,24 +15,34 @@ select yn in "Yes" "No"; do
     esac
 done
 echo
-echo "###################################################################"
-echo "Installing Python3"
-echo "###################################################################"
-echo
 sudo apt update
-sudo apt-get -y install python3-pip
+echo
+if [ $(dpkg-query -W -f='${Status}' python3-pip 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  echo
+  echo "###################################################################"
+  echo "Installing Python3"
+  echo "###################################################################"
+  echo
+  suo apt-get -y install python3-pip;
+fi
+echo
+if [ $(dpkg-query -W -f='${Status}' wget 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  echo
+  echo "###################################################################"
+  echo "Installing Python3"
+  echo "###################################################################"
+  echo
+  suo apt install wget;
+fi
+echo
 echo
 echo "###################################################################"
 echo "Installing IntegraPy"
 echo "###################################################################"
 echo
 sudo pip3 install IntegraPy
-echo
-echo "###################################################################"
-echo "Installing Wget"
-echo "###################################################################"
-echo
-sudo apt install wget
 echo
 echo "###################################################################"
 echo "Downloading & copy files"
