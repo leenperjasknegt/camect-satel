@@ -13,6 +13,7 @@ camecturl = ''
 camectpassword = ''
 integrazone = ''
 integrapartition = ""
+camecturlfull = camecturl + '/api/EnableAlert'
 
 
 template = '''\
@@ -42,10 +43,10 @@ armed_partitions = ', '.join(
 def checkArmStatus():
     if integrapartition in armed_partitions and integrazone in violated_zones :
            print ("Armed")
-           r = requests.post(camecturl/api/EnableAlert, data={'Enable': '0'}, verify=False, auth=('admin', camectpassword))
+           r = requests.post(camecturlfull, data={'Enable': '0'}, verify=False, auth=('admin', camectpassword))
     else:
            print ("Disarmed")
-           r = requests.post(camecturl/api/EnableAlert, verify=False, auth=('admin', camectpassword))
+           r = requests.post(camecturlfull, verify=False, auth=('admin', camectpassword))
 
 
 while(True):
